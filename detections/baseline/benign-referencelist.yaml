@@ -1,0 +1,169 @@
+known_sources:
+  ips:
+    - 75.102.132.46
+    - 131.247.206.154
+  identities:
+    - root  # used for setup
+    - hanselz-admin
+known_writes:
+  - source: signin.amazonaws.com
+    name: ConsoleLogin
+    actor: root
+    first_seen: 2026-06-23T01:33:27Z
+    last_seen: 2026-06-23T01:34:04Z
+    times: 3
+    note: first seen as unmarked arn with initial account creation, two events were counted of this type; following which there was one root login with resolved arn
+  - source: cloudshell.amazonaws.com
+    name: CreateEnvironment
+    actor: root
+    first_seen: 2026-06-23T01:34:46Z
+    last_seen: 2026-06-23T01:34:46Z
+    times: 1
+    note: occured with creation of a CloudShell environment
+  - source: cloudshell.amazonaws.com
+    name: RedeemCode
+    actor: root
+    first_seen: 2026-06-23T01:34:47Z
+    last_seen: 2026-06-23T01:34:47Z
+    times: 1
+    note: subsequent after environment creation, retrieving a fresh token
+  - source: signin.amazonaws.com
+    name: ConsoleLogin
+    actor: hanselz-admin
+    first_seen: 2026-06-23T01:35:37Z
+    last_seen: 2026-06-25T12:30:14Z
+    times: 4
+    note: initial login was done after creation of hanselz-admin IAM user with root, last seen today (2026/06/25)
+  - source: iam.amazonaws.com
+    name: AttachGroupPolicy
+    actor: hanselz-admin
+    first_seen: 2026-06-23T01:36:53Z
+    last_seen: 2026-06-23T01:36:53Z
+    times: 1
+    note: creation of new test-group, group policy gets added at the same time of group creation
+  - source: iam.amazonaws.com
+    name: CreateGroup
+    actor: hanselz-admin
+    first_seen: 2026-06-23T01:36:53Z
+    last_seen: 2026-06-23T01:36:53Z
+    times: 1
+    note: creation of testGroup
+  - source: iam.amazonaws.com
+    name: AddUserToGroup
+    actor: hanselz-admin
+    first_seen: 2026-06-23T01:39:42Z
+    last_seen: 2026-06-23T01:39:42Z
+    times: 1
+    note: added test-user to testGroup to test if AddUserToGroup and CreateUser logs were working correctly
+  - source: iam.amazonaws.com
+    name: CreateUser
+    actor: hanselz-admin
+    first_seen: 2026-06-23T01:39:42Z
+    last_seen: 2026-06-23T01:39:42Z
+    times: 1
+    note: created test-user subsequently after adding it to group, same reason as above
+  - source: s3.amazonaws.com
+    name: CreateBucket
+    actor: hanselz-admin
+    first_seen: 2026-06-23T02:50:04Z
+    last_seen: 2026-06-23T02:50:04Z
+    times: 1
+    note: creation of S3 logging bucket in cloudtrail
+  - source: s3.amazonaws.com
+    name: PutBucketPublicAccessBlock
+    actor: hanselz-admin
+    first_seen: 2026-06-23T02:50:04Z
+    last_seen: 2026-06-23T02:50:04Z
+    times: 1
+    note: blocking of public access to cloudtrail s3 bucket in order to secure logs
+  - source: glue.amazonaws.com
+    name: CreateDatabase
+    actor: hanselz-admin
+    first_seen: 2026-06-23T02:50:05Z
+    last_seen: 2026-06-23T02:50:05Z
+    times: 1
+    note: create the glue/athena database based on the cloudtrail log table during setup
+  - source: glue.amazonaws.com
+    name: CreateTable
+    actor: hanselz-admin
+    first_seen: 2026-06-23T02:50:05Z
+    last_seen: 2026-06-25T03:09:16Z
+    times: 2
+    note: first seen on initial database creation, second time is the projected partition table to save on costs
+  - source: s3.amazonaws.com
+    name: PutBucketLifecycle
+    actor: hanselz-admin
+    first_seen: 2026-06-23T03:00:47Z
+    last_seen: 2026-06-23T03:00:47Z
+    times: 1
+    note: added through initial cloudtrail s3 bucket creation, should be daily
+  - source: glue.amazonaws.com
+    name: DeleteTable
+    actor: hanselz-admin
+    first_seen: 2026-06-24T21:48:08Z
+    last_seen: 2026-06-24T21:48:08Z
+    times: 1
+    note: deleted table to updated with projected partition
+  - source: athena.amazonaws.com
+    name: CreateNamedQuery
+    actor: hanselz-admin
+    first_seen: 2026-06-25T12:31:03Z
+    last_seen: 2026-06-25T16:01:21Z
+    times: 5
+    note: query creations to parse s3 bucket
+  - source: glue.amazonaws.com
+    name: UpdateTable
+    actor: hanselz-admin
+    first_seen: 2026-06-25T13:20:49Z
+    last_seen: 2026-06-25T13:21:29Z
+    times: 3
+    note: checking to see how projected partition columns work
+  - source: athena.amazonaws.com
+    name: UpdateNamedQuery
+    actor: hanselz-admin
+    first_seen: 2026-06-25T14:13:34Z
+    last_seen: 2026-06-25T16:28:07Z
+    times: 3
+    note: update saved queries to change which logs are parsed
+  - source: iam.amazonaws.com
+    name: RemoveUserFromGroup
+    actor: hanselz-admin
+    first_seen: 2026-06-26T02:32:32Z
+    last_seen: 2026-06-26T02:32:32Z
+    times: 1
+    note: removing test-user to prevent unnecessary vulernabilities, coupled with user delete
+  - source: iam.amazonaws.com
+    name: DeleteUser
+    actor: hanselz-admin
+    first_seen: 2026-06-26T02:32:33Z
+    last_seen: 2026-06-26T02:32:33Z
+    times: 1
+    note: same as above
+  - source: iam.amazonaws.com
+    name: DetachGroupPolicy
+    actor: hanselz-admin
+    first_seen: 2026-06-26T02:32:40Z
+    last_seen: 2026-06-26T02:32:40Z
+    times: 1
+    note: removal of test-group so that unnecessary holes are not exploited
+  - source: iam.amazonaws.com
+    name: DeleteGroup
+    actor: hanselz-admin
+    first_seen: 2026-06-26T02:32:40Z
+    last_seen: 2026-06-26T02:32:40Z
+    times: 1
+    note: group removal
+  - source: iam.amazonaws.com
+    name: EnableMFADevice
+    actor: hanselz-admin
+    first_seen: 2026-06-26T02:50:27Z
+    last_seen: 2026-06-26T02:50:27Z
+    times: 1
+    note: adding of MFA to IAM account to enable more security and understand the attack signal
+  - source: iam.amazonaws.com
+    name: EnableMFADevice
+    actor: root
+    first_seen: 2026-06-26T02:51:38Z
+    last_seen: 2026-06-26T02:51:38Z
+    times: 1
+    note: same for root account to ensure security of aws before stratus red team attacks
