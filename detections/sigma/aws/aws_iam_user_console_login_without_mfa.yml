@@ -1,0 +1,25 @@
+title: AWS IAM User Console Login Without MFA
+id: fb3a8525-1a8d-4981-8f6b-9721e0e403c4
+status: test
+description: Detects an IAM user signing in to the AWS console without MFA, emulated by Stratus technique aws.initial-access.console-login-without-mfa
+references:
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.initial-access.console-login-without-mfa/
+author: hanselz
+date: 2026-06-28
+tags:
+  - attack.initial_access
+  - attack.t1078.004
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: signin.amazonaws.com
+    eventName: ConsoleLogin
+    userIdentity.type: IAMUser
+    additionalEventData.MFAUsed: 'No'
+    responseElements.ConsoleLogin: 'Success'
+  condition: selection
+falsepositives:
+  - IAM users that do not have MFA set up yet or in environments that don't enforce MFA
+level: high
