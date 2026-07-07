@@ -1,0 +1,3 @@
+overlap:
+  - source: signin.amazonaws.com
+    name: ConsoleLogin

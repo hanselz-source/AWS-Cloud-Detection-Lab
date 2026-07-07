@@ -1,4 +1,4 @@
-allowlist:
+suppress-list:
   - source: notifications.amazonaws.com
   - source: freetier.amazonaws.com
   - source: uxc.amazonaws.com
