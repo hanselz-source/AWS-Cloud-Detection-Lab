@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
+title: AWS IAM Update User Login Profile
+status: experimental
+description: Detects whether a user's login profile was updated
+references:
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.privilege-escalation.iam-update-user-login-profile/
+author: hanselz
+date: 2026-06-28
+tags:
+  - attack.privilege_escalation
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: iam.amazonaws.com
+    eventName: UpdateLoginProfile
+  condition: selection
+falsepositives:
+  - Any admin configuring the password of a another user's password will trigger this rule; requires refinement for correlation of the ConsoleLogin event
+level: high

@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
+title: AWS IAM Access Key Created for Another Principal
+id: 8d35c2dd-f71b-4be6-8e48-7b424bad91f0
+status: experimental
+description: Detects an IAM user granting an access key to the same or to another IAM user, emulated by aws.persistence.iam-backdoor-user
+references:
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.persistence.iam-backdoor-user/
+author: hanselz
+date: 2026-06-30
+tags:
+  - attack.persistence
+  - attack.t1098.001
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: iam.amazonaws.com
+    eventName: CreateAccessKey
+    userIdentity.type: IAMUser
+  condition: selection
+falsepositives:
+  - Any call to create an access key for any principal, due to Sigma constraints generated SPL and KQL files refinement is necessary
+level: medium

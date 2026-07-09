@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
 title: AWS IAM User Console Login Without MFA
 id: fb3a8525-1a8d-4981-8f6b-9721e0e403c4
 status: test

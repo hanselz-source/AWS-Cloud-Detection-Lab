@@ -1,0 +1,14 @@
+name: cloudtrail-lifecycle
+priority: 100
+transformations:
+  - id: resolve-trail-buckets
+    type: value_placeholders
+    include:
+      - trail_buckets
+    rule_conditions:
+      - type: logsource
+        product: aws
+        service: cloudtrail
+vars:
+  trail_buckets:
+    - "aws-cloudtrail-logs-842091915679-8e2e3d92"

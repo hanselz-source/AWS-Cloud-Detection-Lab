@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
+title: AWS Cloudtrail S3 Bucket Logging Lifecycle Change
+id: eba72cb6-b829-4051-afc2-7ff4fbf81a0c
+status: experimental
+description: Detects whether an S3 buckets lifecycle expiration change is changed to threshold of 3 days or less
+references:
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.defense-evasion.cloudtrail-lifecycle-rule/
+author: hanselz
+date: 2026-07-05
+tags:
+  - attack.t1685.002
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: s3.amazonaws.com
+    eventName: PutBucketLifecycle
+    requestParameters.LifecycleConfiguration.Rule.Expiration.Days|lte: 3
+    requestParameters.LifecycleConfiguration.Rule.Status: "Enabled"
+    bucketName|expand: "%trail_buckets%" # needs to be adjusted via pipeline
+  condition: selection
+falsepositives:
+  - Any bucket lifecycle expiration rule change to 3 days or less will get triggered, including trusted admin users # adjusted via pipeline
+  - Will trigger on bucket creation with a lifecycle expiration rule less than or equal to 3
+level: high
