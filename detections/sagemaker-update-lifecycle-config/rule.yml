@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
+title: AWS Execute Commands on SageMaker Notebook Instance Through Lifecycle Configuration
+status: experimental
+description: 
+references:
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.execution.sagemaker-update-lifecycle-config/
+author: hanselz
+date: 2026-07-08
+tags:
+  - attack.execution
+  - attack.t1072
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource:
+    eventName:
+  condition: selection
+falsepositives:
+  - 
+level: high
