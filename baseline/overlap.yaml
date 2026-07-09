@@ -1,3 +1,5 @@
 overlap:
   - source: signin.amazonaws.com
     name: ConsoleLogin
+  - source: s3.amazonaws.com
+    name: PutBucketLifecycle
