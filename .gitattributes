@@ -1,0 +1,32 @@
+# Normalize everything to LF in the repo and in the working tree.
+# Authored on macOS, occasionally touched from Windows. Without this, a Windows
+# checkout rewrites every file to CRLF and each one shows as fully modified.
+* text=auto eol=lf
+
+# Detection-as-code source. Declared explicitly so intent survives even if
+# text=auto ever misdetects one of these as binary.
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sql   text eol=lf
+*.spl   text eol=lf
+*.kql   text eol=lf
+*.tf    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+
+# Shell scripts break at runtime if they carry CRLF.
+*.sh    text eol=lf
+
+# Binary assets. Never diffed, never line-ending converted.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.pdf   binary
+*.zip   binary
+
+# SVG is text, so it should diff normally.
+*.svg   text eol=lf
+
+# Compiled Sigma output. Collapses in diffs and is excluded from language stats,
+# so reviewers see hand-authored source rather than backend conversion noise.
+generated/** linguist-generated=true
