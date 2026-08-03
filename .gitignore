@@ -38,3 +38,8 @@ aws-credentials*
 
 # ---- OS / editor cruft ----
 .DS_Store
+
+# ---- Local agent / editor config ----
+# Machine-local tooling config, not part of the deliverable
+.claude/
+CLAUDE.local.md
