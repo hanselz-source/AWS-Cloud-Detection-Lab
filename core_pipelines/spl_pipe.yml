@@ -1,0 +1,10 @@
+name: pipeline for adding index and source to spl query
+transformations:
+  - type: add_condition
+    conditions:
+      index: main
+      sourcetype: aws:cloudtrail
+    rule_conditions:
+      - type: logsource
+        product: aws
+        service: cloudtrail

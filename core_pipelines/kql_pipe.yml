@@ -1,0 +1,39 @@
+name: pipeline for changing field names to kql
+priority: 20
+transformations:
+
+  # direct: cloudtrail field to the sentinel column that holds the same value.
+  # nothing surprising here, the names are just spelled differently.
+  - id: direct-columns
+    type: field_name_mapping
+    mapping:
+      eventName: EventName
+      eventSource: EventSource
+      userIdentity.type: UserIdentityType
+    rule_conditions:
+      - type: logsource
+        product: aws
+        service: cloudtrail
+
+  # collapsed: sentinel has no column for these paths. it stores the parent
+  # object as one string holding the whole json, so the path is pointed at that
+  # string and the match runs against the serialised text.
+  #
+  # only safe when the rule matches with contains, because the value is still a
+  # substring of the text. equality and numeric comparison are not safe against
+  - id: collapsed-to-blob-column
+    type: field_name_mapping
+    mapping:
+      requestParameters.onStart{}.content: RequestParameters
+    rule_conditions:
+      - type: logsource
+        product: aws
+        service: cloudtrail
+
+postprocessing:
+  - type: embed
+    prefix: "AWSCloudTrail\n| where "
+    rule_conditions:
+      - type: logsource
+        product: aws
+        service: cloudtrail
