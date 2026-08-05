@@ -13,6 +13,9 @@ tags:
 logsource:
   product: aws
   service: cloudtrail
+# BROKEN on kql: additionalEventData.MFAUsed and responseElements.ConsoleLogin are
+# equality checks against paths inside columns sentinel stores as single strings.
+# converts and runs, matches nothing. spl side is correct. see Build Checklist.md.
 detection:
   selection:
     eventSource: signin.amazonaws.com

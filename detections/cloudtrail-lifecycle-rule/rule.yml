@@ -12,6 +12,10 @@ tags:
 logsource:
   product: aws
   service: cloudtrail
+# BROKEN on kql: Expiration.Days is a numeric comparison against a path inside
+# RequestParameters, which sentinel stores as a single string. Rule.Status has the
+# same problem, and bucketName has no sentinel column at all. spl side is correct.
+# see Build Checklist.md.
 detection:
   selection:
     eventSource: s3.amazonaws.com
