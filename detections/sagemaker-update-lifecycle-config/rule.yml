@@ -8,6 +8,7 @@ references:
 author: hanselz
 date: 2026-07-08
 tags:
+  - attack.execution
   - attack.t1059.004
 logsource:
   product: aws
