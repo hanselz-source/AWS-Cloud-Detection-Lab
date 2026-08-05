@@ -20,6 +20,5 @@ detection:
       - /bin/bash
   condition: selection
 falsepositives:
-  - Requires pipeline, any notebook lifecycle config change will signal the rule without it
   - For KQL any matching base64 string in the requestParameters field will signal; tradeoff since eventname with content has low noise potentinal
 level: high
