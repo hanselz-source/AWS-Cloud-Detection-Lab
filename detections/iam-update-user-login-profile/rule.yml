@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
 title: AWS IAM Update User Login Profile
+id: 9e54949b-cdcb-4217-bcf7-ecdfdd9e753a
 status: experimental
 description: Detects whether a user's login profile was updated
 references:
