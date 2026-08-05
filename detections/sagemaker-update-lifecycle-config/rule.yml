@@ -1,22 +1,25 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/SigmaHQ/sigma-specification/refs/heads/main/json-schema/sigma-detection-rule-schema.json
 title: AWS Execute Commands on SageMaker Notebook Instance Through Lifecycle Configuration
+id: dadb875c-c8bb-4fe9-a203-5a38ff49f4f5
 status: experimental
-description: 
+description: Detects whether a SageMaker notebook instance lifecycle configuration is modified with malicious content; decodes base64 and checks value for /bin/bash
 references:
   - https://stratus-red-team.cloud/attack-techniques/AWS/aws.execution.sagemaker-update-lifecycle-config/
 author: hanselz
 date: 2026-07-08
 tags:
-  - attack.execution
-  - attack.t1072
+  - attack.t1059.004
 logsource:
   product: aws
   service: cloudtrail
 detection:
   selection:
-    eventSource:
-    eventName:
+    eventSource: sagemaker.amazonaws.com
+    eventName: CreateNotebookInstanceLifecycleConfig
+    requestParameters.onStart{}.content|base64offset|contains:
+      - /bin/bash
   condition: selection
 falsepositives:
-  - 
+  - Requires pipeline, any notebook lifecycle config change will signal the rule without it
+  - For KQL any matching base64 string in the requestParameters field will signal; tradeoff since eventname with content has low noise potentinal
 level: high
