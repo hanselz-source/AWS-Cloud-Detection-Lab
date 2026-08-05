@@ -11,9 +11,15 @@ Work in progress.
 Five detections cover initial access, execution, persistence, privilege escalation,
 and defense evasion.
 
+All five convert to Splunk SPL. Three convert to Sentinel KQL. The other two are
+marked broken in their `rule.yml`, because Sentinel stores nested CloudTrail
+objects as single string columns and neither rule can reach inside one without a
+comparison Sigma has no syntax for.
+
 
 ## Roadmap
 
+- A decision on how the two Sentinel-blocked rules express their nested field comparisons
 - Detonation artifacts kept per detection, so every rule can run against real events
 - A write-up per detection: the technique, the CloudTrail evidence it leaves, and tuning notes
 - An ATT&CK Navigator coverage layer built from the rule set
@@ -27,7 +33,7 @@ and defense evasion.
 2. Detonate a Stratus Red Team technique in the account.
 3. Read the CloudTrail events it generates in Amazon Athena.
 4. Write a Sigma rule for the behavior and tag it with MITRE ATT&CK.
-5. Convert the rule with `sigma-cli` through a custom pipeline, then refine the output by hand into Athena SQL, Splunk SPL, and Sentinel KQL. Sigma's generic field mappings leave the raw conversions too broad to use as is.
+5. Convert the rule with `sigma-cli` against a core pipeline per backend. The pipeline supplies what Sigma cannot: the Sentinel table name and column names, and the Splunk index and sourcetype. Where a rule needs a comparison Sigma has no syntax for, the output is refined by hand.
 6. Record benign account activity in reference and suppress lists, so every detection is tuned against a known baseline.
 
 ## Detections
@@ -41,20 +47,23 @@ and defense evasion.
 | AWS CloudTrail S3 Bucket Logging Lifecycle Change | `aws.defense-evasion.cloudtrail-lifecycle-rule` | Defense Evasion |
 
 
-## Repository layout
+## Repository Layout
 
 ```
 .
-├── terraform/                     # lab infrastructure, CloudTrail trail and IAM resources
+├── terraform/                     # lab infrastructure: CloudTrail trail, IAM, and the
+│                                  #   SQS queue and OIDC role the Sentinel connector needs
+├── core_pipelines/
+│   ├── kql_pipe.yml               # Sentinel table name and column mappings
+│   └── spl_pipe.yml               # Splunk index and sourcetype
 ├── detections/                    # one folder per emulated technique
 │   └── <technique>/
 │       ├── rule.yml               # portable Sigma source, hand authored
-│       ├── pipeline.yml           # pySigma transformations, where a rule needs them
+│       ├── pipeline.yml           # values specific to one rule, where it needs them
 │       └── test/                  # detonation artifacts the rule runs against
 ├── baseline/                      # benign reference list, suppress list, overlap notes
 ├── attack-coverage/               # ATT&CK Navigator layer (empty)
 ├── docs/                          # write-ups (empty)
-├── pipeline/                      # shared conversion pipelines (empty)
 ├── reports/                       # detonation reports (empty)
 └── scripts/                       # automation (empty)
 ```
