@@ -1,0 +1,9 @@
+# Copy to terraform.tfvars and fill in. *.tfvars is gitignored.
+
+aws_region  = "us-east-1"
+aws_profile = "hanselz-admin"
+
+cloudtrail_bucket_name = "aws-cloudtrail-logs-<account-id>-<suffix>"
+cloudtrail_prefix      = "AWSLogs/<account-id>/CloudTrail/"
+
+sentinel_workspace_id = "00000000-0000-0000-0000-000000000000"
