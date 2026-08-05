@@ -1,5 +1,3 @@
-# Copy to terraform.tfvars and fill in. *.tfvars is gitignored.
-
 aws_region  = "us-east-1"
 aws_profile = "hanselz-admin"
 
