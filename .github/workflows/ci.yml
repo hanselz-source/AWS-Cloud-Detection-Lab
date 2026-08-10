@@ -1,0 +1,55 @@
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: initialization
+        uses: actions/checkout
+      - name: python setup
+        uses: actions/setup-python
+      - name: dependency installation
+        run: pip install sigma-cli==3.1.0 pysigma-backend-splunk==2.1.0 pysigma-backend-kusto==1.0.1
+      - name: sigma linting, if fail then workflow fails
+        run: sigma check -i -P rule.yml -x attacktag -x d3_fendtag -x filename_length -x duplicate_filename detections/
+      - name: KQL conversion
+        shell: bash
+        run: |
+          fail=0
+          for rule in detections/*/rule.yml; do
+            dir=$(dirname "$rule")
+            name=$(basename "$dir")
+
+            args=(-t kusto -p core_pipelines/kql_pipe.yml)
+            if [ -f "$dir/pipeline.yml" ]; then
+              args+=(-p "$dir/pipeline.yml")
+            fi
+
+            if ! sigma convert "${args[@]}" "$rule" | diff -u - "expected/kusto/$name.kql"; then
+              echo "FAIL $name"
+              fail=1
+            fi
+          done
+          exit $fail
+      - name: SPL conversion
+        shell: bash
+        run: |
+          fail=0
+          for rule in detections/*/rule.yml; do
+            dir=$(dirname "$rule")
+            name=$(basename "$dir")
+
+            args=(-t splunk -p core_pipelines/spl_pipe.yml)
+            if [ -f "$dir/pipeline.yml" ]; then
+              args+=(-p "$dir/pipeline.yml")
+            fi
+
+            if ! sigma convert "${args[@]}" "$rule" | diff -u - "expected/splunk/$name.spl"; then
+              echo "FAIL $name"
+              fail=1
+            fi
+          done
+          exit $fail
