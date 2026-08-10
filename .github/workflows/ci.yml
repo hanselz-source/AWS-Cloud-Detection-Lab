@@ -11,8 +11,10 @@ jobs:
         uses: actions/checkout@v4
       - name: python setup
         uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
       - name: dependency installation
-        run: pip install sigma-cli==3.1.0 pysigma-backend-splunk==2.1.0 pysigma-backend-kusto==1.0.1
+        run: pip install sigma-cli==3.1.0 pysigma==1.5.0 pysigma-backend-splunk==2.1.0 pysigma-backend-kusto==1.0.1
       - name: sigma linting, if fail then workflow fails
         run: sigma check -i -P rule.yml -x attacktag -x d3_fendtag -x filename_length -x duplicate_filename detections/
       - name: KQL conversion
