@@ -11,19 +11,14 @@ Work in progress.
 Five detections cover initial access, execution, persistence, privilege escalation,
 and defense evasion.
 
-All five convert to Splunk SPL. Three convert to Sentinel KQL. The other two are
-marked broken in their `rule.yml`, because Sentinel stores nested CloudTrail
-objects as single string columns and neither rule can reach inside one without a
-comparison Sigma has no syntax for.
+All five currently convert to Splunk SPL and Sentinel Kusto Query Language (KQL). Pipelines are required for both languages.
 
 
 ## Roadmap
 
-- A decision on how the two Sentinel-blocked rules express their nested field comparisons
-- Detonation artifacts kept per detection, so every rule can run against real events
+- Detonation logs kept per detection, so every rule can run against real events
 - A write-up per detection: the technique, the CloudTrail evidence it leaves, and tuning notes
 - An ATT&CK Navigator coverage layer built from the rule set
-- CI that checks every rule against the Sigma schema on push
 - More Stratus techniques, starting with the tactics not yet covered
 
 ## Workflow
@@ -65,7 +60,7 @@ comparison Sigma has no syntax for.
 ├── attack-coverage/               # ATT&CK Navigator layer (empty)
 ├── docs/                          # write-ups (empty)
 ├── reports/                       # detonation reports (empty)
-└── scripts/                       # automation (empty)
+└── scripts/                       # krule and sprule (log detection, generally same script used in the CI)
 ```
 
 No detection has all of these yet.
