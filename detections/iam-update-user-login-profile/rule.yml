@@ -8,7 +8,8 @@ references:
 author: hanselz
 date: 2026-06-28
 tags:
-  - attack.privilege_escalation
+  - attack.privilege-escalation
+  - attack.t1098
 logsource:
   product: aws
   service: cloudtrail
