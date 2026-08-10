@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: initialization
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: python setup
-        uses: actions/setup-python
+        uses: actions/setup-python@v5
       - name: dependency installation
         run: pip install sigma-cli==3.1.0 pysigma-backend-splunk==2.1.0 pysigma-backend-kusto==1.0.1
       - name: sigma linting, if fail then workflow fails
