@@ -1,0 +1,2 @@
+AWSCloudTrail
+| where EventSource =~ "sagemaker.amazonaws.com" and EventName =~ "CreateNotebookInstanceLifecycleConfig" and (parse_json(RequestParameters).onStart contains "L2Jpbi9iYXNo" or parse_json(RequestParameters).onStart contains "9iaW4vYmFza" or parse_json(RequestParameters).onStart contains "vYmluL2Jhc2")

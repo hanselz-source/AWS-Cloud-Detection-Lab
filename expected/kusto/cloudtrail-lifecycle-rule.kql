@@ -1,0 +1,2 @@
+AWSCloudTrail
+| where EventSource =~ "s3.amazonaws.com" and EventName =~ "PutBucketLifecycle" and parse_json(RequestParameters).LifecycleConfiguration.Rule.Expiration.Days <= 1 and parse_json(RequestParameters).LifecycleConfiguration.Rule.Status =~ "Enabled"

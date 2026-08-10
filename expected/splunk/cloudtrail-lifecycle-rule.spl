@@ -1,0 +1,1 @@
+index="main" sourcetype="aws:cloudtrail" eventSource="s3.amazonaws.com" eventName="PutBucketLifecycle" requestParameters.LifecycleConfiguration.Rule.Expiration.Days<=1 requestParameters.LifecycleConfiguration.Rule.Status="Enabled"

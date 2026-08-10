@@ -1,0 +1,1 @@
+index="main" sourcetype="aws:cloudtrail" eventSource="iam.amazonaws.com" eventName="UpdateLoginProfile"

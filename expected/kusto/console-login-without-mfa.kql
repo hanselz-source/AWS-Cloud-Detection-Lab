@@ -1,0 +1,2 @@
+AWSCloudTrail
+| where EventSource =~ "signin.amazonaws.com" and EventName =~ "ConsoleLogin" and UserIdentityType =~ "IAMUser" and parse_json(AdditionalEventData).MFAUsed =~ "No" and parse_json(ResponseElements).ConsoleLogin =~ "Success"

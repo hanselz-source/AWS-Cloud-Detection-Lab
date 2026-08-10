@@ -1,0 +1,1 @@
+index="main" sourcetype="aws:cloudtrail" eventSource="sagemaker.amazonaws.com" eventName="CreateNotebookInstanceLifecycleConfig" "requestParameters.onStart{}.content"="*L2Jpbi9iYXNo*" OR "requestParameters.onStart{}.content"="*9iaW4vYmFza*" OR "requestParameters.onStart{}.content"="*vYmluL2Jhc2*"
