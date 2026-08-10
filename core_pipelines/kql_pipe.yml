@@ -3,7 +3,7 @@ priority: 20
 transformations:
 
   # direct: cloudtrail field to the sentinel column that holds the same value.
-  # nothing surprising here, the names are just spelled differently.
+
   - id: direct-columns
     type: field_name_mapping
     mapping:
@@ -15,16 +15,12 @@ transformations:
         product: aws
         service: cloudtrail
 
-  # collapsed: sentinel has no column for these paths. it stores the parent
-  # object as one string holding the whole json, so the path is pointed at that
-  # string and the match runs against the serialised text.
-  #
-  # only safe when the rule matches with contains, because the value is still a
-  # substring of the text. equality and numeric comparison are not safe against
-  - id: collapsed-to-blob-column
-    type: field_name_mapping
+  - id: prefix-mapping
+    type: field_name_prefix_mapping
     mapping:
-      requestParameters.onStart{}.content: RequestParameters
+      requestParameters: 'parse_json(RequestParameters)'
+      responseElements: 'parse_json(ResponseElements)'
+      additionalEventData: 'parse_json(AdditionalEventData)'
     rule_conditions:
       - type: logsource
         product: aws
@@ -37,3 +33,6 @@ postprocessing:
       - type: logsource
         product: aws
         service: cloudtrail
+  - type: replace
+    pattern: "'([^'\\s]+)'"
+    replacement: "\\1"

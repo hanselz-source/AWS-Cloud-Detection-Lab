@@ -1,0 +1,6 @@
+name: KQL Conversion for Deep Field Mapping
+priority: 100
+transformations:
+  - type: field_name_mapping
+    mapping:
+      parse_json(RequestParameters).onStart{}.content: parse_json(RequestParameters).onStart
