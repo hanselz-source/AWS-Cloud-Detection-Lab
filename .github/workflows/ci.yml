@@ -24,6 +24,11 @@ jobs:
             name=$(basename "$dir")
 
             args=(-t kusto -p core_pipelines/kql_pipe.yml)
+
+            if [ -f "$dir/pipeline.yml" ]; then
+              args+=(-p "$dir/pipeline.yml")
+            fi
+
             if ! err=$(sigma convert "${args[@]}" "$rule" 2>&1 >"$RUNNER_TEMP/q.kql"); then
               echo "ERROR $name  conversion failed"
               echo "$err" | grep -v "^Parsing Sigma rules$" | sed "s/^/        /"
@@ -46,11 +51,16 @@ jobs:
             name=$(basename "$dir")
 
             args=(-t splunk -p core_pipelines/spl_pipe.yml)
+
+            if [ -f "$dir/pipeline.yml" ]; then
+              args+=(-p "$dir/pipeline.yml")
+            fi
+
             if ! err=$(sigma convert "${args[@]}" "$rule" 2>&1 >"$RUNNER_TEMP/q.spl"); then
               echo "ERROR $name  conversion failed"
               echo "$err" | grep -v "^Parsing Sigma rules$" | sed "s/^/        /"
               fail=1
-            elif ! diff -u "$RUNNER_TEMP/q.spl" "expected/kusto/$name.spl" > "$RUNNER_TEMP/d.txt" 2>&1; then
+            elif ! diff -u "$RUNNER_TEMP/q.spl" "expected/splunk/$name.spl" > "$RUNNER_TEMP/d.txt" 2>&1; then
               echo "FAIL  $name  query does not match expected/"
               sed "s/^/        /" "$RUNNER_TEMP/d.txt"
               fail=1
