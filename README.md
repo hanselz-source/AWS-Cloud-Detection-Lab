@@ -58,9 +58,9 @@ All five currently convert to Splunk SPL and Sentinel Kusto Query Language (KQL)
 │       └── test/                  # detonation artifacts the rule runs against
 ├── baseline/                      # benign reference list, suppress list, overlap notes
 ├── attack-coverage/               # ATT&CK Navigator layer (empty)
-├── docs/                          # write-ups (empty)
+├── docs/                          # write-ups -soon to be added-
 ├── reports/                       # detonation reports (empty)
-└── scripts/                       # krule and sprule (log detection, generally same script used in the CI)
+└── scripts/                       # sprule and krule (conversion scripts)
 ```
 
 No detection has all of these yet.
