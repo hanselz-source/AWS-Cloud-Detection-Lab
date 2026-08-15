@@ -7,8 +7,8 @@
 # running a query needs an engine address and a password.
 #
 # usage:
-#   ./scripts/rule-query.sh iam-backdoor-user splunk
-#   ./scripts/rule-query.sh iam-backdoor-user kusto
+#   ./scripts/krule-and-sprule.sh iam-backdoor-user splunk
+#   ./scripts/krule-and-sprule.sh iam-backdoor-user kusto
 
 set -euo pipefail
 
