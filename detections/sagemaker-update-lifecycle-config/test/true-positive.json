@@ -1,0 +1,2365 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "2b97be27-a970-527f-890c-4c0a454f87e9",
+      "eventID": "8389366e-2260-5fb6-a869-7e71f038d089",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "c43d387a-53ef-515b-9224-7a4a79525020",
+      "eventID": "6e6783a8-49e1-5fb5-83bb-09ff6decdf16",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreatePolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "policyName": "stratus-red-team-update-sagemaker-config-profile-sagemaker-low-priv-attacker-policy",
+        "path": "/",
+        "policyDocument": "{\"Statement\":[{\"Action\":[\"sagemaker:StopNotebookInstance\",\"sagemaker:UpdateNotebookInstance\",\"sagemaker:StartNotebookInstance\",\"sagemaker:CreateNotebookInstanceLifecycleConfig\"],\"Effect\":\"Allow\",\"Resource\":\"*\"},{\"Action\":\"sagemaker:DescribeNotebookInstance\",\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+        "description": "Vulnerable policy allowing SageMaker notebook modification.",
+        "tags": [
+          {
+            "key": "StratusRedTeam",
+            "value": "true"
+          }
+        ]
+      },
+      "responseElements": {
+        "policy": {
+          "policyName": "stratus-red-team-update-sagemaker-config-profile-sagemaker-low-priv-attacker-policy",
+          "policyId": "ANPADBQP57FF2AEXAM001",
+          "arn": "arn:aws:iam::123456789012:policy/stratus-red-team-update-sagemaker-config-profile-sagemaker-low-priv-attacker-policy",
+          "path": "/",
+          "defaultVersionId": "v1",
+          "attachmentCount": 0,
+          "permissionsBoundaryUsageCount": 0,
+          "isAttachable": true,
+          "createDate": "2026-07-09T04:02:36Z",
+          "updateDate": "2026-07-09T04:02:36Z",
+          "tags": [
+            {
+              "key": "StratusRedTeam",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "requestID": "4e762860-740e-5c30-99e7-670700b38b8a",
+      "eventID": "08055dc2-c03c-5835-b4a6-9d9fbd336285",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "52c904bf-db99-585e-9b64-4d401192166e",
+      "eventID": "9c808db8-b4bf-559c-b090-5e4cd573445d",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "path": "/",
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role",
+        "assumeRolePolicyDocument": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"}}],\"Version\":\"2012-10-17\"}",
+        "description": "Role with permissions to execute the SageMaker update attack.",
+        "maxSessionDuration": 3600,
+        "tags": [
+          {
+            "key": "StratusRedTeam",
+            "value": "true"
+          }
+        ]
+      },
+      "responseElements": {
+        "role": {
+          "path": "/",
+          "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role",
+          "roleId": "AROADBQP57FF2AEXAM001",
+          "arn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-low-priv-role",
+          "createDate": "2026-07-09T04:02:36Z",
+          "assumeRolePolicyDocument": "%7B%22Statement%22%3A%5B%7B%22Action%22%3A%22sts%3AAssumeRole%22%2C%22Effect%22%3A%22Allow%22%2C%22Principal%22%3A%7B%22AWS%22%3A%22arn%3Aaws%3Aiam%3A%3A123456789012%3Aroot%22%7D%7D%5D%2C%22Version%22%3A%222012-10-17%22%7D",
+          "tags": [
+            {
+              "key": "StratusRedTeam",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "requestID": "6466c88d-6896-5277-8d1f-6088452e75e5",
+      "eventID": "eabf1911-4458-5e53-832d-d313e87d49cc",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "fdb158ea-e656-5e67-b1dc-4fbe45854ace",
+      "eventID": "9b0c3aea-cf40-5586-bd8a-10b04e246623",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "path": "/",
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+        "assumeRolePolicyDocument": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"sagemaker.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+        "description": "Execution role for SageMaker instance. Target for privilege escalation.",
+        "maxSessionDuration": 3600,
+        "tags": [
+          {
+            "key": "StratusRedTeam",
+            "value": "true"
+          }
+        ]
+      },
+      "responseElements": {
+        "role": {
+          "path": "/",
+          "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+          "roleId": "AROADBQP57FF2AEXAM002",
+          "arn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+          "createDate": "2026-07-09T04:02:36Z",
+          "assumeRolePolicyDocument": "%7B%22Statement%22%3A%5B%7B%22Action%22%3A%22sts%3AAssumeRole%22%2C%22Effect%22%3A%22Allow%22%2C%22Principal%22%3A%7B%22Service%22%3A%22sagemaker.amazonaws.com%22%7D%7D%5D%2C%22Version%22%3A%222012-10-17%22%7D",
+          "tags": [
+            {
+              "key": "StratusRedTeam",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "requestID": "0a724f63-bd26-51da-8e89-79c348ae5782",
+      "eventID": "6994ccd6-011a-5a48-80ed-6a3a363b4b15",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetPolicyVersion",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "policyArn": "arn:aws:iam::123456789012:policy/stratus-red-team-update-sagemaker-config-profile-sagemaker-high-priv-policy",
+        "versionId": "v1"
+      },
+      "responseElements": null,
+      "requestID": "6c90a06c-6e80-5805-9acd-b666cb37ddc0",
+      "eventID": "4d2238ce-462f-5a0e-b7dc-a16e2b886b9c",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreatePolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "policyName": "stratus-red-team-update-sagemaker-config-profile-sagemaker-high-priv-policy",
+        "path": "/",
+        "policyDocument": "{\"Statement\":[{\"Action\":[\"iam:CreateUser\",\"iam:AttachUserPolicy\",\"iam:ListUsers\",\"iam:ListPolicies\"],\"Effect\":\"Allow\",\"Resource\":\"*\"},{\"Action\":[\"s3:ListAllMyBuckets\",\"s3:GetObject\",\"s3:PutObject\",\"s3:DeleteObject\"],\"Effect\":\"Allow\",\"Resource\":\"*\"},{\"Action\":[\"cloudwatch:PutMetricData\",\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\",\"ecr:GetAuthorizationToken\",\"ecr:BatchCheckLayerAvailability\",\"ecr:GetDownloadUrlForLayer\",\"ecr:BatchGetImage\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+        "description": "Policy with IAM and S3 admin privileges.",
+        "tags": [
+          {
+            "key": "StratusRedTeam",
+            "value": "true"
+          }
+        ]
+      },
+      "responseElements": {
+        "policy": {
+          "policyName": "stratus-red-team-update-sagemaker-config-profile-sagemaker-high-priv-policy",
+          "policyId": "ANPADBQP57FF2AEXAM002",
+          "arn": "arn:aws:iam::123456789012:policy/stratus-red-team-update-sagemaker-config-profile-sagemaker-high-priv-policy",
+          "path": "/",
+          "defaultVersionId": "v1",
+          "attachmentCount": 0,
+          "permissionsBoundaryUsageCount": 0,
+          "isAttachable": true,
+          "createDate": "2026-07-09T04:02:36Z",
+          "updateDate": "2026-07-09T04:02:36Z",
+          "tags": [
+            {
+              "key": "StratusRedTeam",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "requestID": "ccc303cd-0239-53e5-9159-771b8830f9ca",
+      "eventID": "a6beb6d6-b870-536c-8762-89fca9dfddb3",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "c6a07e97-6068-5bce-883e-60a73005cca6",
+      "eventID": "b8a5e1ac-9b9f-5f4c-9cc1-96ad25f43694",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AttachRolePolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role",
+        "policyArn": "arn:aws:iam::123456789012:policy/stratus-red-team-update-sagemaker-config-profile-sagemaker-low-priv-attacker-policy"
+      },
+      "responseElements": null,
+      "requestID": "8fa2eb4d-8d5a-50f6-afae-7bf8e90a1cee",
+      "eventID": "04aa3c67-075b-5456-b8af-a416595f388e",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:35Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "GetCallerIdentity",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgzNTY5NzU1ODg5Okc6eTdVYmtHeDc=",
+        "RequestDetails": {
+          "awsServingRegion": "us-east-1",
+          "endpointType": "global"
+        }
+      },
+      "requestID": "1af8e561-bdf2-5466-af3b-62d1b9fa2523",
+      "eventID": "0bd6416a-775c-5948-83d7-a9c12177b2ac",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "sts.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "CreateNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook",
+        "instanceType": "ml.t2.medium",
+        "securityGroupIds": [],
+        "roleArn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+        "tags": [
+          {
+            "key": "StratusRedTeam",
+            "value": "true"
+          }
+        ],
+        "directInternetAccess": "Enabled",
+        "volumeSizeInGB": 5,
+        "rootAccess": "Disabled"
+      },
+      "responseElements": {
+        "notebookInstanceArn": "arn:aws:sagemaker:us-east-1:123456789012:notebook-instance/stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "requestID": "91f17fb8-b919-507b-9b7d-50455a00f30e",
+      "eventID": "6849f774-3a56-5cae-b0df-997f4496db15",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:38Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "fa390875-1341-57df-bf0c-30310cd567a7",
+      "eventID": "a8ebcac7-fc5e-5519-a687-9267986d8a60",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:38Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "73b68da1-d2e4-5edf-9628-cc2f30bdf357",
+      "eventID": "70d68d0e-ef28-5e19-ad77-9a3ec332bc41",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:38Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "2169280a-eaa2-5fc5-a98b-e66e58fb74ac",
+      "eventID": "2f82ae10-134d-5e7f-91bd-fcd88c3b9db1",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:39Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "a240c196-252b-50ff-a6f1-f4b3d290b55a",
+      "eventID": "d9abac42-b667-52f8-85a6-52b5ff6b5bb4",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "00b6562f-0f17-5f27-9d2c-0b82f6da4724",
+      "eventID": "8f39e7d5-56d1-568c-a507-ebc23a727874",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:37Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "bd73d885-a7c6-5038-a6b1-1a1ebcb48f71",
+      "eventID": "24ea4321-fd06-5adf-8a0e-82e19130d5fe",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:36Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go-v2/1.18.0 os/macos lang/go/1.19.8 md/GOOS/darwin md/GOARCH/arm64 api/iam/1.19.12 stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "a0c1d371-2921-5bc0-a492-0c8986687d22",
+      "eventID": "4b6e2e50-0844-5350-ab82-37a48b06f434",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:41Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "233a5e43-4619-5a59-b46c-d24b0251c6d9",
+      "eventID": "6929d740-ca31-5b9c-98a0-2c8438c7d23b",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:02:44Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "b9161564-b91c-5248-bb9a-92ad1acc2469",
+      "eventID": "b8347215-a2f7-5f9e-806b-9a0b248d7894",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:03:01Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "63f3134e-a0cf-583f-a6f8-44ecf80a5bce",
+      "eventID": "162a5653-6bb6-50c0-9f5f-47c0da9e5b19",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM018",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:03:08Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:03:09Z",
+      "eventSource": "glue.amazonaws.com",
+      "eventName": "ListDataQualityRulesets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "maxResults": 1000
+      },
+      "responseElements": null,
+      "requestID": "75ac574e-0314-57db-bdda-378af20edc8d",
+      "eventID": "479a00ab-2aa7-5373-b809-eef50e385a4f",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:03:21Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "8992ee50-e5c0-5552-afd8-82f8a4f99569",
+      "eventID": "462967cf-dc14-5534-a825-ffa78ba6fece",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:03:11Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "b5cfff71-90c6-5e1f-aee7-38e33db87c59",
+      "eventID": "4e0d1fd2-e288-5824-b95f-fb73704c2dac",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:03:31Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "0d664dfa-d2e6-5d3e-8fc7-e258b618d652",
+      "eventID": "7ed6fb4f-e38e-579b-a593-f2e2d203ba66",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:03:51Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "0041a4e9-03d2-5c09-bcb0-1e55d6c3fb64",
+      "eventID": "59498062-6499-5c2a-96ab-76816c8ebfb8",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:01Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "3a917afc-705c-538f-8f43-714790857c4a",
+      "eventID": "3d2c71e4-d9bb-53bb-8428-81213e488dab",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:11Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "0475f70c-d46b-5388-92be-178b3f6e6574",
+      "eventID": "2b62a828-eaca-5c96-9bb6-175969d8b5c4",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "im.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:04:23Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "im.amazonaws.com",
+      "userAgent": "im.amazonaws.com",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+        "roleSessionName": "SageMaker",
+        "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"*\",\n      \"Resource\": \"*\"\n    }\n  ]\n}",
+        "tags": []
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAM019",
+          "sessionToken": "[REDACTED]",
+          "expiration": "2026-07-09T05:04:23Z"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROADBQP57FF2AEXAM002:SageMaker",
+          "arn": "arn:aws:sts::123456789012:assumed-role/stratus-red-team-update-sagemaker-config-profile-high-priv-role/SageMaker"
+        },
+        "packedPolicySize": 2
+      },
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgzNTY5ODYzMTkwOlI6Mk1NdHlvYlA="
+      },
+      "requestID": "e2e18fa7-07d3-562e-b5db-3568ef37cf7c",
+      "eventID": "f096cc45-f23c-5bb3-b05a-8dd24765844c",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "123456789012",
+          "type": "AWS::IAM::Role",
+          "ARN": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "sharedEventID": "b8fa6eae-3d12-5c79-8af3-c3556277ee58",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:21Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "c340ba08-41f2-5fcf-818d-936673472611",
+      "eventID": "256d97ba-d186-5591-8f08-782152d78c2e",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:31Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "797ba0df-a460-5e6d-91a5-5064a5fc1c0e",
+      "eventID": "5559a966-c008-5b96-b37a-1658f983c963",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:42Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "62e059a2-6591-5d8a-a948-e9c3de1abd24",
+      "eventID": "8fcdcd55-5323-5742-b5a1-6ba977bbc4a2",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:04:52Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "24e542f1-a079-5466-a038-ddf146e88bae",
+      "eventID": "6c8d1c22-b24f-565e-a2bf-5096c3e576e9",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:05:02Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "442348b3-51ff-5e1e-8a76-d06d80d7a867",
+      "eventID": "f2f4a9b5-6e8f-501b-938f-2c15156f01a1",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "im.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:16Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "im.amazonaws.com",
+      "userAgent": "im.amazonaws.com",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+        "roleSessionName": "SageMaker",
+        "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"*\",\n      \"Resource\": \"*\"\n    }\n  ]\n}",
+        "tags": []
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAM020",
+          "sessionToken": "[REDACTED]",
+          "expiration": "2026-07-09T05:05:16Z"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROADBQP57FF2AEXAM002:SageMaker",
+          "arn": "arn:aws:sts::123456789012:assumed-role/stratus-red-team-update-sagemaker-config-profile-high-priv-role/SageMaker"
+        },
+        "packedPolicySize": 2
+      },
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgzNTY5OTE2MzMzOlI6b1BTY1gzVXQ="
+      },
+      "requestID": "28663ced-c1e6-5091-bdff-51a8bfdf423f",
+      "eventID": "5b2731b9-c655-5d51-966e-7fe66c44694a",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "123456789012",
+          "type": "AWS::IAM::Role",
+          "ARN": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "sharedEventID": "6aedfd00-5a74-5429-b4a1-199f198f05a4",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:05:32Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "36e7e986-96b9-5708-86f3-166b8dbdc744",
+      "eventID": "7620d320-4dc4-5e76-bfa7-a213e7ef7405",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:05:42Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "9611afd5-33a9-55ca-9c54-dd6fb951b652",
+      "eventID": "6f0a6674-b3a2-5483-8b25-4c3fc06a9517",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM021",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "d7f3bf45-8fe0-51f4-a3b2-801a604c7154",
+      "eventID": "12d733bf-7a97-5139-9310-01b3d4605628",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM021",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "be6724ad-7bd3-5cd2-aa5f-4f7a775c65a0",
+      "eventID": "9740657c-ca6f-5b6b-a2de-2ed62de3be54",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+        "roleSessionName": "resource-explorer-2"
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAM022",
+          "sessionToken": "[REDACTED]",
+          "expiration": "2026-07-09T05:05:56Z"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+          "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2"
+        }
+      },
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgzNTY5OTU2MTM0OlI6YTVYWlAxSVE="
+      },
+      "requestID": "4e966a56-ea51-5dd0-92ec-4a6e2bf093aa",
+      "eventID": "7e4f6caf-4f18-57c6-a9f8-2c25e0febc04",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "123456789012",
+          "type": "AWS::IAM::Role",
+          "ARN": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "sharedEventID": "4c77dee3-d468-5624-86a6-157634d6314a",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM023",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "74b1ec38-692b-519d-8469-5260d229ff36",
+      "eventID": "67911ab4-1bee-5215-9c63-101516b69159",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:58Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+        "roleSessionName": "resource-explorer-2"
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAM024",
+          "sessionToken": "[REDACTED]",
+          "expiration": "2026-07-09T05:05:58Z"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+          "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2"
+        }
+      },
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgzNTY5OTU4NDUwOlI6ak5QMm1HQm0="
+      },
+      "requestID": "b79a085c-3b87-5113-b432-f9e4b0286527",
+      "eventID": "b29e3af0-08f8-52bc-abea-31b53804bd27",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "123456789012",
+          "type": "AWS::IAM::Role",
+          "ARN": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "sharedEventID": "a09b28d0-ebe4-5917-9d42-8f1983929373",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM024",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:58Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:58Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetPolicyVersion",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "policyArn": "arn:aws:iam::123456789012:policy/stratus-red-team-update-sagemaker-config-profile-sagemaker-low-priv-attacker-policy",
+        "versionId": "v1"
+      },
+      "responseElements": null,
+      "requestID": "08253f31-05e1-5dfa-8bed-a855186238ef",
+      "eventID": "3a8374fc-f8c5-5a6d-bbe3-47c62593e0e3",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM023",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "f719c043-bb84-54db-a95d-ec33f6fd85b3",
+      "eventID": "8584bb83-fc65-548b-9a73-a96fcaab640e",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM021",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "143ea6fd-17d3-583c-8fa0-b59fab07ec64",
+      "eventID": "9321ea0a-5627-5b96-944b-9a276c0d07cf",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:05:52Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "fd81a26f-9163-5903-843b-036a0a7aab72",
+      "eventID": "15735dc5-7a05-53b6-a85d-ba14c4639783",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM023",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAttachedRolePolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "roleName": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "07037e43-3c75-5127-89f9-8c54c9900789",
+      "eventID": "46517ed8-cdbd-584a-b73c-8b7bf73c37ed",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.09",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM025",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-07-08T18:58:43Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-07-09T04:05:39Z",
+      "eventSource": "notifications.amazonaws.com",
+      "eventName": "ListManagedNotificationEvents",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/198.51.100.0 Safari/537.36 Edg/198.51.100.0",
+      "requestParameters": {
+        "maxResults": "100",
+        "locale": "en_US"
+      },
+      "responseElements": null,
+      "requestID": "19b99b8e-38eb-52eb-b54d-56babc6e64fc",
+      "eventID": "93b3a315-d31f-599e-a59d-919424fc045d",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAMPLE:resource-explorer-2",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AWSServiceRoleForResourceExplorer/resource-explorer-2",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM022",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "accountId": "123456789012",
+            "userName": "AWSServiceRoleForResourceExplorer"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:56Z",
+            "mfaAuthenticated": "false"
+          }
+        },
+        "invokedBy": "resource-explorer-2.amazonaws.com"
+      },
+      "eventTime": "2026-07-09T04:05:56Z",
+      "eventSource": "cloudcontrolapi.amazonaws.com",
+      "eventName": "GetResource",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "resource-explorer-2.amazonaws.com",
+      "userAgent": "resource-explorer-2.amazonaws.com",
+      "requestParameters": {
+        "typeName": "AWS::IAM::Role",
+        "identifier": "stratus-red-team-update-sagemaker-config-profile-low-priv-role"
+      },
+      "responseElements": null,
+      "requestID": "46bc1a40-db1f-5703-a0c0-3c08f68a5272",
+      "eventID": "76fb26d6-63f9-552f-be24-8a4e40b97097",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:02Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "f30c8d20-c372-5abf-91f5-757b155f107f",
+      "eventID": "ad39f07c-56ba-5afd-a711-2d9b94dfe6f4",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:12Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "e56e2ccb-b53b-540d-8583-3f3a67fb93c4",
+      "eventID": "5126bcf7-b711-5942-a819-04c98ff5c8d5",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:22Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "69ade1f0-a7c6-5090-a0c0-8b318c0df041",
+      "eventID": "c3a93b58-e0f7-5d3d-be0c-9635c14e498f",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:33Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "ListTags",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/4.67.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.261 (go1.19.8; darwin; arm64) stratus-red-team_5f86eaa6-5aa8-4fd0-9c9e-b39c8ea107d3 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "resourceArn": "arn:aws:sagemaker:us-east-1:123456789012:notebook-instance/stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "841db6b6-a57f-5f1a-9ac2-e258c674ffc8",
+      "eventID": "2bbfb8e8-96d0-5de7-8d06-5fb349d05a53",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAM002:SageMaker",
+        "arn": "arn:aws:sts::123456789012:assumed-role/stratus-red-team-update-sagemaker-config-profile-high-priv-role/SageMaker",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM026",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAM002",
+            "arn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+            "accountId": "123456789012",
+            "userName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:16Z",
+            "mfaAuthenticated": "false"
+          },
+          "ec2RoleDelivery": "2.0"
+        }
+      },
+      "eventTime": "2026-07-09T04:06:18Z",
+      "eventSource": "logs.amazonaws.com",
+      "eventName": "CreateLogStream",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "198.51.100.10",
+      "userAgent": "CWAgent/1.300067.1 (go1.25.11 X:nodwarf5; linux; amd64) ID/54ee2c8e-7fda-46b1-bd43-ceee3ce493ff inputs:(logfile nop) outputs:(cloudwatchlogs nop) aws-sdk-go/1.48.6 (go1.25.11 X:nodwarf5; linux; amd64)",
+      "errorCode": "ResourceNotFoundException",
+      "errorMessage": "The specified log group does not exist.",
+      "requestParameters": {
+        "logGroupName": "/aws/sagemaker/NotebookInstances",
+        "logStreamName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook/jupyter.log"
+      },
+      "responseElements": null,
+      "requestID": "f9ef750a-493f-5d94-a227-05d777ba4629",
+      "eventID": "5c7d8ebb-4e9c-5c32-8fa0-3fd7d56835be",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "apiVersion": "20140328",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "logs.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAM002:SageMaker",
+        "arn": "arn:aws:sts::123456789012:assumed-role/stratus-red-team-update-sagemaker-config-profile-high-priv-role/SageMaker",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM026",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAM002",
+            "arn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+            "accountId": "123456789012",
+            "userName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:16Z",
+            "mfaAuthenticated": "false"
+          },
+          "ec2RoleDelivery": "2.0"
+        }
+      },
+      "eventTime": "2026-07-09T04:06:18Z",
+      "eventSource": "logs.amazonaws.com",
+      "eventName": "CreateLogGroup",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "198.51.100.10",
+      "userAgent": "CWAgent/1.300067.1 (go1.25.11 X:nodwarf5; linux; amd64) ID/54ee2c8e-7fda-46b1-bd43-ceee3ce493ff inputs:(logfile nop) outputs:(cloudwatchlogs nop) aws-sdk-go/1.48.6 (go1.25.11 X:nodwarf5; linux; amd64)",
+      "requestParameters": {
+        "logGroupName": "/aws/sagemaker/NotebookInstances"
+      },
+      "responseElements": null,
+      "requestID": "4f3a4ca0-1ff6-5ec8-88ca-e5ece8dda5ec",
+      "eventID": "ecd6ae3f-707f-548d-9b1f-3056ab25c934",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "apiVersion": "20140328",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "logs.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROADBQP57FF2AEXAM002:SageMaker",
+        "arn": "arn:aws:sts::123456789012:assumed-role/stratus-red-team-update-sagemaker-config-profile-high-priv-role/SageMaker",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM026",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROADBQP57FF2AEXAM002",
+            "arn": "arn:aws:iam::123456789012:role/stratus-red-team-update-sagemaker-config-profile-high-priv-role",
+            "accountId": "123456789012",
+            "userName": "stratus-red-team-update-sagemaker-config-profile-high-priv-role"
+          },
+          "attributes": {
+            "creationDate": "2026-07-09T04:05:16Z",
+            "mfaAuthenticated": "false"
+          },
+          "ec2RoleDelivery": "2.0"
+        }
+      },
+      "eventTime": "2026-07-09T04:06:18Z",
+      "eventSource": "logs.amazonaws.com",
+      "eventName": "CreateLogStream",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "198.51.100.10",
+      "userAgent": "CWAgent/1.300067.1 (go1.25.11 X:nodwarf5; linux; amd64) ID/54ee2c8e-7fda-46b1-bd43-ceee3ce493ff inputs:(logfile nop) outputs:(cloudwatchlogs nop) aws-sdk-go/1.48.6 (go1.25.11 X:nodwarf5; linux; amd64)",
+      "requestParameters": {
+        "logGroupName": "/aws/sagemaker/NotebookInstances",
+        "logStreamName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook/jupyter.log"
+      },
+      "responseElements": null,
+      "requestID": "90ffc501-add4-5a68-9146-f2e66b56f523",
+      "eventID": "c483d828-e23f-5b48-ba27-d727f6f3f216",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "apiVersion": "20140328",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "logs.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:46Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeAccountAttributes",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "stratus-red-team_106479cc-749a-43f6-838c-eeb9476a1f34",
+      "requestParameters": {
+        "accountAttributeNameSet": {},
+        "filterSet": {}
+      },
+      "responseElements": null,
+      "requestID": "2df41e06-69be-5920-94ef-14e2b7be0c84",
+      "eventID": "1aad2237-2e4d-56d0-b3f9-1932d0501a1a",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "ec2.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:46Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "CreateNotebookInstanceLifecycleConfig",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "stratus-red-team_cc1a7c21-9d32-4d30-8016-1d82356b8a89",
+      "requestParameters": {
+        "notebookInstanceLifecycleConfigName": "priv-esc-config",
+        "onStart": [
+          {
+            "content": "IyEvYmluL2Jhc2gKc2V0IC1lCiMgRXhlY3V0ZSBhIGNvbW1hbmQgYXMgdGhlIGhpZ2gtcHJpdmlsZWdlIHJvbGUgYW5kIHdyaXRlIG91dHB1dCB0byBhIGxvZyBmaWxlCmF3cyBzdHMgZ2V0LWNhbGxlci1pZGVudGl0eSA+PiAvaG9tZS9lYzItdXNlci9TYWdlTWFrZXIvZXhwbG9pdC1wcml2ZXNjLXN0cmF0dXMtbG9nLnR4dCAyPiYxCmF3cyBpYW0gbGlzdC11c2VycyA+PiAvaG9tZS9lYzItdXNlci9TYWdlTWFrZXIvZXhwbG9pdC1wcml2ZXNjLXN0cmF0dXMtbG9nLnR4dCAyPiYxCg=="
+          }
+        ],
+        "tags": []
+      },
+      "responseElements": {
+        "notebookInstanceLifecycleConfigArn": "arn:aws:sagemaker:us-east-1:123456789012:notebook-instance-lifecycle-config/priv-esc-config"
+      },
+      "requestID": "f82f2b32-2977-53a6-b080-4cb64da3ee53",
+      "eventID": "cddadd8e-fbdb-55ad-a694-af6115bc85b0",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:46Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "StopNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "stratus-red-team_cc1a7c21-9d32-4d30-8016-1d82356b8a89",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "0f94235c-38d8-5628-99ac-61b6951974b5",
+      "eventID": "501e6246-26f0-5fce-bfe6-20d7623757f6",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM002",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-07-09T04:06:46Z",
+      "eventSource": "sagemaker.amazonaws.com",
+      "eventName": "DescribeNotebookInstance",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.11",
+      "userAgent": "stratus-red-team_cc1a7c21-9d32-4d30-8016-1d82356b8a89",
+      "requestParameters": {
+        "notebookInstanceName": "stratus-red-team-update-sagemaker-config-profile-vuln-notebook"
+      },
+      "responseElements": null,
+      "requestID": "733eb8c3-2282-5cca-a8a2-0adebb26569d",
+      "eventID": "e41454dc-e776-5f77-9dbe-dcd27d7edd0f",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "api.sagemaker.us-east-1.amazonaws.com"
+      }
+    }
+  ]
+}

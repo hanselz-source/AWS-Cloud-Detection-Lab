@@ -1,0 +1,836 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-06-28T03:43:25Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/dev (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.20 (go1.17.6; windows; amd64) stratus-red-team_da0f8a51-116b-4e41-bee6-f5dc6b37f1f9 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": {
+        "path": "/",
+        "userName": "stratus-red-team-nmfalu-mnwefotygd"
+      },
+      "responseElements": {
+        "user": {
+          "path": "/",
+          "userName": "stratus-red-team-nmfalu-mnwefotygd",
+          "userId": "AIDACKCEVSQ6C2EXAM001",
+          "arn": "arn:aws:iam::123456789012:user/stratus-red-team-nmfalu-mnwefotygd",
+          "createDate": "2026-06-28T03:43:25Z"
+        }
+      },
+      "requestID": "1fc81ee2-0ae3-55dd-a211-2275c1988b6f",
+      "eventID": "585347c2-2b1f-5702-8b36-8cf29366aed6",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-06-28T03:43:24Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/dev (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go-v2/1.16.4 os/windows lang/go/1.17.6 md/GOOS/windows md/GOARCH/amd64 api/iam/1.18.4 stratus-red-team_da0f8a51-116b-4e41-bee6-f5dc6b37f1f9 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "84c46dfd-dcc3-58ff-8b9c-3dd2f9d08f73",
+      "eventID": "b0af3f80-eaa0-5473-8b8b-95e9bffe5423",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAM001",
+        "arn": "arn:aws:iam::123456789012:user/stratus-red-team-nmfalu-mnwefotygd",
+        "accountId": "123456789012",
+        "userName": "stratus-red-team-nmfalu-mnwefotygd"
+      },
+      "eventTime": "2026-06-28T03:43:54Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "stratus-red-team_d5931f6b-8389-42ae-9fd9-d991d691be3a",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "LoginTo": "https://console.aws.amazon.com/console/home",
+        "MobileVersion": "No",
+        "MFAUsed": "No"
+      },
+      "eventID": "bca2624c-5c44-57d9-8f7d-cef995552c98",
+      "readOnly": false,
+      "eventType": "AwsConsoleSignIn",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "signin.aws.amazon.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin"
+      },
+      "eventTime": "2026-06-28T03:43:24Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "GetCallerIdentity",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "APN/1.0 HashiCorp/1.0 Terraform/1.3.10 (+https://www.terraform.io) terraform-provider-aws/dev (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.20 (go1.17.6; windows; amd64) stratus-red-team_da0f8a51-116b-4e41-bee6-f5dc6b37f1f9 HashiCorp-terraform-exec/0.21.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "additionalEventData": {
+        "ExtendedRequestId": "MTp1cy1lYXN0LTE6UzoxNzgyNjE4MjA0Mjk0Okc6aFkwczhpZmc=",
+        "RequestDetails": {
+          "awsServingRegion": "us-east-1",
+          "endpointType": "global"
+        }
+      },
+      "requestID": "46cb11d3-429d-564f-ae66-4dc3185c938b",
+      "eventID": "507c6283-b844-5bb1-a546-109c9fcb963e",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "sts.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:18Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "GetWorkGroup",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "workGroup": "primary"
+      },
+      "responseElements": null,
+      "requestID": "4d61fe40-52a3-5820-910d-17b8bc257086",
+      "eventID": "7497d24a-0efc-5a4f-8628-58d44ecb2666",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:18Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "DescribeKey",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "keyId": "alias/aws/s3"
+      },
+      "responseElements": null,
+      "requestID": "77020ce4-46c8-5b25-a0f0-3ac1c1fd0eac",
+      "eventID": "b0b8db30-9a40-50a8-b268-c4472e63a94d",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "123456789012",
+          "type": "AWS::KMS::Key",
+          "ARN": "arn:aws:kms:us-east-1:123456789012:key/621de44d-eb6b-56aa-8b2b-9db8d1e4d63e"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_256_GCM_SHA384",
+        "clientProvidedHostHeader": "kms.us-east-1.amazonaws.com",
+        "keyExchange": "X25519MLKEM768"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:19Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "ListDataCatalogs",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "4216010e-811a-51c2-b09a-f88829df1b5b",
+      "eventID": "da36375c-e883-5292-b1d2-00c4724249f6",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "glue.amazonaws.com",
+      "eventName": "GetCatalogImportStatus",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "c8244a12-88f9-5b77-9639-60e79e6b378a",
+      "eventID": "fea24267-2c71-510c-a274-f7beb5c72743",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "glue.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:18Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "BatchGetNamedQuery",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "namedQueryIds": [
+          "7c3cc7d4-8b77-4b9b-9b2a-601978ccd99e",
+          "d63a6bfc-ba19-4c2e-9791-26b1622f64de",
+          "7046c04f-1b94-4e7c-a94c-e81cedb9d9b3",
+          "13dfd3bb-31d8-4408-b988-231e07b3f998",
+          "1c1a0e12-933d-4638-b76f-be0f402b00e1",
+          "6067d737-13a7-4c65-aa73-bbaf223c977e",
+          "c7ea1e58-33fe-415f-a337-1b7b7e85c8b6"
+        ]
+      },
+      "responseElements": null,
+      "requestID": "18e52da8-4960-510e-9bbc-31b134e18e03",
+      "eventID": "449b2d42-997d-54c4-af89-06a9a5b9efea",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:18Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "ListNamedQueries",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "maxResults": 50,
+        "workGroup": "primary"
+      },
+      "responseElements": null,
+      "requestID": "17b51a59-2c71-5062-b151-4799fc4ae834",
+      "eventID": "0426a511-9a16-5d76-891d-d6e40c81f093",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:19Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "GetWorkGroup",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "workGroup": "primary"
+      },
+      "responseElements": null,
+      "requestID": "90534ac2-48fa-5b99-827b-ff88d1cb1735",
+      "eventID": "72fc267f-cc26-54ad-9fdd-ed65bb64d5df",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "BatchGetQueryExecution",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "queryExecutionIds": [
+          "186a7ef1-7de8-4aad-8f83-6cb53c056d0b",
+          "a2141d4e-ea8a-411b-9d9a-3204c9ed80fe",
+          "f7012068-5f61-4c49-a374-cec46870d889",
+          "25319e22-8808-487e-a86c-8ba8151e89ed",
+          "cede5528-cd51-4337-8c5f-8a505da20f45",
+          "b25b66ef-5ede-4ffb-a73c-58e00a56095f",
+          "576806aa-c61a-4c22-8427-7e6d1075e2cf",
+          "6287fc5f-7609-456c-87d2-87e59cba9070",
+          "73ed2a92-4de6-4504-9e13-a6e1236a8f7d",
+          "e4871187-2f18-47dd-ab2e-d96464eccfc9",
+          "59ca8d0d-fdb7-43ce-86b8-4c91e72252bc",
+          "b0f437b8-a4de-4f53-9da2-d90d0c93f609",
+          "a1cbb50a-dfdc-42f4-8526-d5efe230488e",
+          "54436799-ad5a-4557-881c-3d9850e397de",
+          "8fabf943-870c-495f-8b1f-4e91e41264e0",
+          "de12c6d4-0a26-4609-8750-8042ac896f73",
+          "668e517e-c4f2-4fc9-81a5-57a4e05ce994",
+          "e2705524-4b2c-4667-908a-994b48d6ed6f",
+          "8fd8fb73-b0f9-4f30-960a-1b0d7903fc11",
+          "92f5d408-e1c7-4346-9172-122b7039388f",
+          "c0c84c7c-d752-4175-8ed7-3abd175663fd",
+          "bd529b8a-e805-4411-a4b8-6d9f2efa0378",
+          "9d67ff43-4843-4f7b-86f7-5a7a26f32150",
+          "cf2e37eb-9d3b-404c-b18c-ed8862327747",
+          "a121a7cb-1c43-469e-8425-84cc69bb0f96",
+          "0a20756e-eb29-483e-9e02-33ea8b9179b5",
+          "746dddb7-d16c-4a34-bac8-0cd671550c1e",
+          "66cadc91-a41a-430c-9fde-cc0d32036900",
+          "2b0ec73c-01ca-4b65-b771-7045e515a880",
+          "b734af4b-afab-444d-9647-284fcd5a0072"
+        ]
+      },
+      "responseElements": null,
+      "requestID": "1f1afd75-f34c-556e-8536-7bf4d13bf865",
+      "eventID": "cab5d3de-996f-5b01-b32c-2e002c8c8dd4",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:19Z",
+      "eventSource": "glue.amazonaws.com",
+      "eventName": "GetCatalogImportStatus",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "449c4291-7cf6-5a66-94eb-ca8719e26e3f",
+      "eventID": "381fca7d-c098-5a81-b3cf-d0874896e029",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "glue.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "BatchGetQueryExecution",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "queryExecutionIds": [
+          "186a7ef1-7de8-4aad-8f83-6cb53c056d0b",
+          "a2141d4e-ea8a-411b-9d9a-3204c9ed80fe",
+          "f7012068-5f61-4c49-a374-cec46870d889",
+          "25319e22-8808-487e-a86c-8ba8151e89ed",
+          "cede5528-cd51-4337-8c5f-8a505da20f45",
+          "b25b66ef-5ede-4ffb-a73c-58e00a56095f",
+          "576806aa-c61a-4c22-8427-7e6d1075e2cf",
+          "6287fc5f-7609-456c-87d2-87e59cba9070",
+          "73ed2a92-4de6-4504-9e13-a6e1236a8f7d",
+          "e4871187-2f18-47dd-ab2e-d96464eccfc9",
+          "59ca8d0d-fdb7-43ce-86b8-4c91e72252bc",
+          "b0f437b8-a4de-4f53-9da2-d90d0c93f609",
+          "a1cbb50a-dfdc-42f4-8526-d5efe230488e",
+          "54436799-ad5a-4557-881c-3d9850e397de",
+          "8fabf943-870c-495f-8b1f-4e91e41264e0",
+          "de12c6d4-0a26-4609-8750-8042ac896f73",
+          "668e517e-c4f2-4fc9-81a5-57a4e05ce994",
+          "e2705524-4b2c-4667-908a-994b48d6ed6f",
+          "8fd8fb73-b0f9-4f30-960a-1b0d7903fc11",
+          "92f5d408-e1c7-4346-9172-122b7039388f",
+          "c0c84c7c-d752-4175-8ed7-3abd175663fd",
+          "bd529b8a-e805-4411-a4b8-6d9f2efa0378",
+          "9d67ff43-4843-4f7b-86f7-5a7a26f32150",
+          "cf2e37eb-9d3b-404c-b18c-ed8862327747",
+          "a121a7cb-1c43-469e-8425-84cc69bb0f96",
+          "0a20756e-eb29-483e-9e02-33ea8b9179b5",
+          "746dddb7-d16c-4a34-bac8-0cd671550c1e",
+          "66cadc91-a41a-430c-9fde-cc0d32036900",
+          "2b0ec73c-01ca-4b65-b771-7045e515a880",
+          "b734af4b-afab-444d-9647-284fcd5a0072",
+          "c7bb4d3f-c9b1-4cce-b414-fc89bb170e9c",
+          "11a1f8f0-6bc8-45ac-b21b-97dc18afa4c3",
+          "3ca1b205-97c9-4a81-b926-fed2dcc2bcd9",
+          "1f56630b-982b-458c-8c99-0eea4c14b605",
+          "261439b1-e0b0-4579-a608-3f892ad91651",
+          "d2c9bb33-9bdf-4d64-8d19-87153016d6ff",
+          "ecf52b47-12ca-427b-ad85-db2acf8945a5",
+          "5ed7ac69-cadf-40a9-941b-16becd6f4a3c",
+          "791b48f4-8d88-441a-8065-77616c759a4e",
+          "3a9f1ab4-9be7-4df0-a09d-128653c64f4f",
+          "7fd27e30-d1fe-4ae1-b068-5710999557b3",
+          "515a275c-770a-432f-a42b-ecacc438331a",
+          "5a50976c-dd3a-45f9-8b4d-c1813fe8993c",
+          "836af0ba-91b5-433a-8df7-9b5cb8ca7427",
+          "5f4827b1-cae9-48e7-9176-3532c9944a44",
+          "6c050e6e-bf97-4b75-8524-238f17c938ca",
+          "cc75d2a3-3dd0-4a70-ae2d-85963d062af3",
+          "722c1f05-45e1-42f9-8a23-0ae9678eeeb7",
+          "6ed4cfb3-8ff2-4e47-a946-ffe5abbb137d",
+          "ecc02bb7-f700-4305-91db-8c80480aea9d"
+        ]
+      },
+      "responseElements": null,
+      "requestID": "221d7345-424d-5c96-84b7-353918c8087d",
+      "eventID": "c403d47b-3be4-5651-bee8-e085b2d67d67",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "glue.amazonaws.com",
+      "eventName": "GetDatabases",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "additionalEventData": {
+        "lakeFormationPrincipal": "arn:aws:iam::123456789012:user/hanselz-admin"
+      },
+      "requestID": "4174807a-548c-5658-be69-cf4722f1eceb",
+      "eventID": "def2f1e0-2861-5fab-98ae-d6308888567d",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "glue.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:19Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "BatchGetQueryExecution",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "queryExecutionIds": [
+          "186a7ef1-7de8-4aad-8f83-6cb53c056d0b",
+          "a2141d4e-ea8a-411b-9d9a-3204c9ed80fe",
+          "f7012068-5f61-4c49-a374-cec46870d889",
+          "25319e22-8808-487e-a86c-8ba8151e89ed",
+          "cede5528-cd51-4337-8c5f-8a505da20f45",
+          "b25b66ef-5ede-4ffb-a73c-58e00a56095f",
+          "576806aa-c61a-4c22-8427-7e6d1075e2cf",
+          "6287fc5f-7609-456c-87d2-87e59cba9070",
+          "73ed2a92-4de6-4504-9e13-a6e1236a8f7d",
+          "e4871187-2f18-47dd-ab2e-d96464eccfc9",
+          "59ca8d0d-fdb7-43ce-86b8-4c91e72252bc",
+          "b0f437b8-a4de-4f53-9da2-d90d0c93f609",
+          "a1cbb50a-dfdc-42f4-8526-d5efe230488e",
+          "54436799-ad5a-4557-881c-3d9850e397de",
+          "8fabf943-870c-495f-8b1f-4e91e41264e0",
+          "de12c6d4-0a26-4609-8750-8042ac896f73",
+          "668e517e-c4f2-4fc9-81a5-57a4e05ce994",
+          "e2705524-4b2c-4667-908a-994b48d6ed6f",
+          "8fd8fb73-b0f9-4f30-960a-1b0d7903fc11",
+          "92f5d408-e1c7-4346-9172-122b7039388f",
+          "c0c84c7c-d752-4175-8ed7-3abd175663fd",
+          "bd529b8a-e805-4411-a4b8-6d9f2efa0378",
+          "9d67ff43-4843-4f7b-86f7-5a7a26f32150",
+          "cf2e37eb-9d3b-404c-b18c-ed8862327747",
+          "a121a7cb-1c43-469e-8425-84cc69bb0f96",
+          "0a20756e-eb29-483e-9e02-33ea8b9179b5",
+          "746dddb7-d16c-4a34-bac8-0cd671550c1e",
+          "66cadc91-a41a-430c-9fde-cc0d32036900",
+          "2b0ec73c-01ca-4b65-b771-7045e515a880",
+          "b734af4b-afab-444d-9647-284fcd5a0072"
+        ]
+      },
+      "responseElements": null,
+      "requestID": "bd0be06b-1e75-5d8e-8789-50d1ac1a5903",
+      "eventID": "f725a4b0-89d0-584d-b9a7-38e72594a504",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "ListQueryExecutions",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": {
+        "nextToken": "AUTVssjYcLtwAZ1MOOn2Lzwfjv+PWhnYETWOri6sFdAa5LMcYJHX9kOejatAl+8iIr9Xx5ZU43aYUB1VY61ZD9ZA79Sy0y9LBwAo13Gsz+2BrFXGgNjCK5QR2uLyi4/LmISjTzZGyLBdNtX+moYB2iWT0bylpwURJpTR32356dONm06G2TuMIdD1krlClGmJxHmdL2tNPcRcNcPPrtWQLa6HnOSSwA9bP6GlqmZq6nb8Htl0r1fPIZ8jRYIO1PtpzsTlWSTdQGat4ucAJnR4xteoYJi14xdrl83B/xVSAmw40XG3ndheQnS0HKTmOvP5Q7p8fkQtE/On",
+        "maxResults": 50,
+        "workGroup": "primary"
+      },
+      "responseElements": null,
+      "requestID": "0db1a856-c940-56bb-99ed-2ae36c723e9f",
+      "eventID": "c9c264ce-e66e-5a51-881b-e401b51d2f88",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    },
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/hanselz-admin",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAM001",
+        "userName": "hanselz-admin",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2026-06-27T23:15:18Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2026-06-28T03:47:22Z",
+      "eventSource": "athena.amazonaws.com",
+      "eventName": "ListDataCatalogs",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.13",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/192.0.2.0 Safari/537.36 Edg/192.0.2.0",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "417db951-11e4-58c3-b3f4-28ed5e17bfdf",
+      "eventID": "4a8018ea-3a28-5561-9803-16a01af6c095",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "athena.us-east-1.amazonaws.com"
+      },
+      "sessionCredentialFromConsole": "true"
+    }
+  ]
+}
