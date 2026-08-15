@@ -24,7 +24,9 @@ function Get-RuleQuery {
   $dir = Join-Path $RepoRoot "detections\$Name"
   if (-not (Test-Path $dir)) { Write-Error "no detection named $Name"; return }
 
-  $core, $refine = switch ($Target) {
+  $core = switch ($Target) {
+    'splunk' { "spl_pipe.yml" }
+    'kusto'  { "kql_pipe.yml" }
   }
 
   $args = @('convert', '-t', $Target, '-p', (Join-Path $RepoRoot "core_pipelines\$core"))
@@ -40,13 +42,6 @@ function Get-RuleQuery {
     Write-Warning "conversion produced no query, rerunning to show the error"
     sigma @args
     return
-  }
-
-  # another field. this appends it after conversion, so ci never checks it.
-  $ref = Join-Path $dir $refine
-  if (Test-Path $ref) {
-    $extra = ((Get-Content $ref) -join "`n").Trim()
-    if ($extra) { $query = $query.TrimEnd() + "`n" + $extra }
   }
 
   return $query

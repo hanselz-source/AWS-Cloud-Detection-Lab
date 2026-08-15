@@ -20,4 +20,5 @@ detection:
     userIdentity.type: IAMUser
   condition: selection
 falsepositives:
+  - Legitimate access key creation by an IAM user
 level: medium

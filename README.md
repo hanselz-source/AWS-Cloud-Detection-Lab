@@ -12,8 +12,8 @@ Each detection has:
 - True-positive and true-negative CloudTrail fixtures.
 - Expected Splunk SPL and Sentinel KQL output.
 
-The CI workflow checks Sigma syntax, converts every rule for both backends, compares the output with the files under `expected/`, and evaluates the queries against the event fixtures.
-
+The CI workflow checks Sigma syntax, converts every rule for both backends, compares the output
+with the files under `expected/`, and evaluates the queries against the event fixtures.
 
 ## Workflow
 
@@ -23,9 +23,9 @@ The CI workflow checks Sigma syntax, converts every rule for both backends, comp
 4. Write a Sigma rule for the behavior and tag it with MITRE ATT&CK.
 5. Convert the rule with `sigma-cli` using the shared pipeline for the target backend.
 6. Add a rule-specific pipeline when conversion needs an environment-specific value.
-8. Record benign activity in the baseline files and test the rule against known event fixtures.
+7. Record benign activity in the baseline files and test the rule against known event fixtures.
 
-The query scripts print converted queries. They do not run them against Splunk or Sentinel
+The query scripts print converted queries. They do not run them against Splunk or Sentinel.
 
 ## Detections
 
@@ -37,11 +37,11 @@ The query scripts print converted queries. They do not run them against Splunk o
 | AWS IAM Update User Login Profile | `aws.privilege-escalation.iam-update-user-login-profile` | Privilege Escalation |
 | AWS CloudTrail S3 Bucket Logging Lifecycle Change | `aws.defense-evasion.cloudtrail-lifecycle-rule` | Defense Impairment |
 
+## Pipelines
 
 The files under `core_pipelines/` map CloudTrail fields to the target backend.
 
 A detection can add its own `pipeline.yml` when it needs values that differ by rule or environment.
-
 
 ## Repository layout
 

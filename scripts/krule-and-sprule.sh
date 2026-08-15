@@ -26,6 +26,8 @@ if [ -z "$name" ] || [ -z "$target" ]; then
 fi
 
 case "$target" in
+  splunk) core="spl_pipe.yml" ;;
+  kusto)  core="kql_pipe.yml" ;;
   *)      echo "target must be splunk or kusto" >&2; exit 2 ;;
 esac
 
@@ -46,11 +48,6 @@ if [ -z "${query//[[:space:]]/}" ]; then
   echo "conversion produced no query, rerunning to show the error" >&2
   sigma "${args[@]}"
   exit 1
-fi
-
-# another field. this appends it after conversion, so ci never checks it.
-if [ -s "$dir/$refine" ]; then
-  query="$query"$'\n'"$(cat "$dir/$refine")"
 fi
 
 printf '%s\n' "$query"

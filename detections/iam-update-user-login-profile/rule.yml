@@ -19,4 +19,5 @@ detection:
     eventName: UpdateLoginProfile
   condition: selection
 falsepositives:
+  - Authorized password changes performed by administrators
 level: high
