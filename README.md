@@ -1,67 +1,84 @@
 # AWS Cloud Detection Lab
 
-A detection engineering lab for AWS.
+An AWS detection engineering lab that emulates cloud attacks, captures CloudTrail telemetry, and tests Sigma detections against benign and malicious event fixtures.
 
-Stratus Red Team detonates attack techniques in a dedicated lab account, CloudTrail collects the telemetry they produce, and each technique gets a Sigma rule tuned against the account's own benign activity.
+## Current state
 
-## Status
+The repository contains five Stratus Red Team detections.
 
-Work in progress.
+Each detection has:
 
-Five detections cover initial access, execution, persistence, privilege escalation,
-and defense evasion.
+- A hand-authored Sigma rule.
+- True-positive and true-negative CloudTrail fixtures.
+- Expected Splunk SPL and Sentinel KQL output.
 
-All five currently convert to Splunk SPL and Sentinel Kusto Query Language (KQL). Pipelines are required for both languages.
+The CI workflow checks Sigma syntax, converts every rule for both backends, compares the output with the files under `expected/`, and evaluates the queries against the event fixtures.
 
-
-## Roadmap
-
-- Detonation logs kept per detection, so every rule can run against real events
-- A write-up per detection: the technique, the CloudTrail evidence it leaves, and tuning notes
-- An ATT&CK Navigator coverage layer built from the rule set
-- More Stratus techniques, starting with the tactics not yet covered
 
 ## Workflow
 
-1. Provision the lab infrastructure with Terraform, including the CloudTrail trail
-   and the IAM principals used for detonation.
-2. Detonate a Stratus Red Team technique in the account.
-3. Read the CloudTrail events it generates in Amazon Athena.
+1. Provision the lab infrastructure with Terraform, including CloudTrail and the IAM principals used for detonation.
+2. Detonate a Stratus Red Team technique in the lab account.
+3. Read the CloudTrail events in Amazon Athena.
 4. Write a Sigma rule for the behavior and tag it with MITRE ATT&CK.
-5. Convert the rule with `sigma-cli` against a core pipeline per backend. The pipeline supplies what Sigma cannot: the Sentinel table name and column names, and the Splunk index and sourcetype. Where a rule needs a comparison Sigma has no syntax for, the output is refined by hand.
-6. Record benign account activity in reference and suppress lists, so every detection is tuned against a known baseline.
+5. Convert the rule with `sigma-cli` using the shared pipeline for the target backend.
+6. Add a rule-specific pipeline when conversion needs an environment-specific value.
+8. Record benign activity in the baseline files and test the rule against known event fixtures.
+
+The query scripts print converted queries. They do not run them against Splunk or Sentinel
 
 ## Detections
 
-| Detection | Emulated technique | Tactic |
+| Detection | Stratus technique | Tactic |
 |---|---|---|
 | AWS IAM User Console Login Without MFA | `aws.initial-access.console-login-without-mfa` | Initial Access |
 | AWS Execute Commands on SageMaker Notebook Instance Through Lifecycle Configuration | `aws.execution.sagemaker-update-lifecycle-config` | Execution |
 | AWS IAM Access Key Created for Another Principal | `aws.persistence.iam-backdoor-user` | Persistence |
 | AWS IAM Update User Login Profile | `aws.privilege-escalation.iam-update-user-login-profile` | Privilege Escalation |
-| AWS CloudTrail S3 Bucket Logging Lifecycle Change | `aws.defense-evasion.cloudtrail-lifecycle-rule` | Defense Evasion |
+| AWS CloudTrail S3 Bucket Logging Lifecycle Change | `aws.defense-evasion.cloudtrail-lifecycle-rule` | Defense Impairment |
 
 
-## Repository Layout
+The files under `core_pipelines/` map CloudTrail fields to the target backend.
 
-```
+A detection can add its own `pipeline.yml` when it needs values that differ by rule or environment.
+
+
+## Repository layout
+
+```text
 .
-├── terraform/                     # lab infrastructure: CloudTrail trail, IAM, and the
-│                                  #   SQS queue and OIDC role the Sentinel connector needs
+├── .github/
+│   └── workflows/
+│       └── ci.yml                 # linting, conversion checks, and fixture tests
+├── terraform/                     # CloudTrail, IAM, and Sentinel connector resources
 ├── core_pipelines/
-│   ├── kql_pipe.yml               # Sentinel table name and column mappings
-│   └── spl_pipe.yml               # Splunk index and sourcetype
+│   ├── kql_pipe.yml               # Sentinel field and table mappings
+│   └── spl_pipe.yml               # Splunk index and sourcetype mappings
 ├── detections/                    # one folder per emulated technique
-│   └── <technique>/
-│       ├── rule.yml               # portable Sigma source, hand authored
-│       ├── pipeline.yml           # values specific to one rule, where it needs them
-│       └── test/                  # detonation artifacts the rule runs against
-├── baseline/                      # benign reference list, suppress list, overlap notes
-├── attack-coverage/               # ATT&CK Navigator layer (empty)
-├── docs/                          # write-ups -soon to be added-
-├── reports/                       # detonation reports (empty)
-└── scripts/                       # sprule and krule (conversion scripts)
+│   └── <name>/
+│       ├── rule.yml               # hand-authored Sigma source
+│       ├── pipeline.yml           # optional rule-specific conversion values
+│       └── test/
+│           ├── true-positive.json
+│           └── true-negative.json
+├── expected/
+│   ├── kusto/                     # expected Sentinel KQL conversions
+│   └── splunk/                    # expected Splunk SPL conversions
+├── baseline/
+│   ├── benign-referencelist.yaml
+│   ├── benign-suppresslist.yaml
+│   └── overlap.yaml
+├── attack-coverage/               # reserved for ATT&CK Navigator layers
+├── docs/                          # reserved for technique write-ups
+├── reports/                       # reserved for detonation reports
+└── scripts/
+    ├── evaluate_query_fixtures.py # evaluates converted queries against JSON fixtures
+    ├── krule-and-sprule.ps1       # prints a KQL or SPL query on Windows
+    └── krule-and-sprule.sh        # prints a KQL or SPL query on Unix shells
 ```
 
-No detection has all of these yet.
+## Roadmap
 
+- Add a write-up for each detection.
+- Add an ATT&CK Navigator coverage layer.
+- Add more Stratus Red Team techniques.
