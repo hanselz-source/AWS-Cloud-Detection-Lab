@@ -71,3 +71,51 @@ jobs:
             fi
           done
           exit $fail
+      - name: converted-query fixture tests
+        shell: bash
+        run: |
+          fail=0
+          for target in kusto splunk; do
+            for rule in detections/*/rule.yml; do
+              dir=$(dirname "$rule")
+              name=$(basename "$dir")
+
+              if [ "$target" = kusto ]; then
+                args=(-t kusto -p core_pipelines/kql_pipe.yml)
+                backend=kusto
+              else
+                args=(-t splunk -p core_pipelines/spl_pipe.yml)
+                backend=splunk
+              fi
+
+              if [ -f "$dir/pipeline.yml" ]; then
+                args+=(-p "$dir/pipeline.yml")
+              fi
+
+              query="$RUNNER_TEMP/$backend-$name.query"
+              error="$RUNNER_TEMP/$backend-$name.error"
+              if ! sigma convert "${args[@]}" "$rule" >"$query" 2>"$error"; then
+                echo "ERROR $backend/$name  conversion failed"
+                sed "s/^/        /" "$error"
+                fail=2
+                continue
+              fi
+
+              for fixture in true-positive true-negative; do
+                if [ "$fixture" = true-positive ]; then
+                  expectation=tp
+                else
+                  expectation=tn
+                fi
+
+                if ! python scripts/evaluate_query_fixtures.py \
+                    --backend "$backend" \
+                    --query "$query" \
+                    --fixture "$dir/test/$fixture.json" \
+                    --expect "$expectation"; then
+                  fail=4
+                fi
+              done
+            done
+          done
+          exit $fail
