@@ -43,3 +43,5 @@ aws-credentials*
 # Machine-local tooling config, not part of the deliverable
 .claude/
 CLAUDE.local.md
+
+.vscode/
