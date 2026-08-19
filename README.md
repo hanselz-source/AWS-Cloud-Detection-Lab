@@ -1,31 +1,36 @@
-# AWS Cloud Detection Lab
+# AWS cloud detection lab
 
-An AWS detection engineering lab that emulates cloud attacks, captures CloudTrail telemetry, and tests Sigma detections against benign and malicious event fixtures.
+An AWS detection engineering lab for Stratus Red Team emulation, CloudTrail telemetry, and portable Sigma detections.
 
-## Current state
+- Learn how to spot harmful AWS account changes before they cause damage
+- Test detections against safe examples of actions that can look like normal administrator work
+- Use CloudTrail records to write and test each detection rule
+- Keep the rules in one source format that converts for Splunk and Sentinel
+- Make the work repeatable so someone else can check the evidence and the tests
+
+## Current scope
 
 The repository contains five Stratus Red Team detections.
 
-Each detection has:
+Each detection has a hand-authored Sigma rule, sanitized true-positive and true-negative CloudTrail fixtures, and expected Splunk SPL and Sentinel KQL output.
 
-- A hand-authored Sigma rule.
-- True-positive and true-negative CloudTrail fixtures.
-- Expected Splunk SPL and Sentinel KQL output.
+GitHub Actions CI runs the following checks:
 
-The CI workflow checks Sigma syntax, converts every rule for both backends, compares the output
-with the files under `expected/`, and evaluates the queries against the event fixtures.
+- Sigma validation
+- KQL and SPL conversion
+- Comparison against the expected query files
+- Fixture evaluation for each generated query
+- Checkov and Trivy scans of committed Terraform
 
 ## Workflow
 
-1. Provision the lab infrastructure with Terraform, including CloudTrail and the IAM principals used for detonation.
+1. Provision the AWS lab infrastructure with Terraform.
 2. Detonate a Stratus Red Team technique in the lab account.
-3. Read the CloudTrail events in Amazon Athena.
-4. Write a Sigma rule for the behavior and tag it with MITRE ATT&CK.
-5. Convert the rule with `sigma-cli` using the shared pipeline for the target backend.
-6. Add a rule-specific pipeline when conversion needs an environment-specific value.
-7. Record benign activity in the baseline files and test the rule against known event fixtures.
-
-The query scripts print converted queries. They do not run them against Splunk or Sentinel.
+3. Query the CloudTrail events in Athena.
+4. Write and tag a Sigma rule for the observed behavior.
+5. Convert the rule with `sigma-cli` and the shared backend pipeline.
+6. Add a `pipeline.yml` when a conversion needs values that differ by rule or environment.
+7. Record benign activity in the baseline files and test the rule against the event fixtures.
 
 ## Detections
 
@@ -40,7 +45,6 @@ The query scripts print converted queries. They do not run them against Splunk o
 ## Pipelines
 
 The files under `core_pipelines/` map CloudTrail fields to the target backend.
-
 A detection can add its own `pipeline.yml` when it needs values that differ by rule or environment.
 
 ## Repository layout
@@ -49,8 +53,8 @@ A detection can add its own `pipeline.yml` when it needs values that differ by r
 .
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                 # linting, conversion checks, and fixture tests
-├── terraform/                     # CloudTrail, IAM, and Sentinel connector resources
+│       └── ci.yml                 # automated checks
+├── terraform/                     # cloud setup files
 ├── core_pipelines/
 │   ├── kql_pipe.yml               # Sentinel field and table mappings
 │   └── spl_pipe.yml               # Splunk index and sourcetype mappings
@@ -79,6 +83,8 @@ A detection can add its own `pipeline.yml` when it needs values that differ by r
 
 ## Roadmap
 
-- Add a write-up for each detection.
-- Add an ATT&CK Navigator coverage layer.
-- Add more Stratus Red Team techniques.
+- Build an ATT&CK Navigator coverage layer
+- Run generated SPL against sanitized fixtures in local Docker Splunk
+- Add more Stratus Red Team techniques
+- Add technique write-ups after each detection is complete
+- Run Prowler after the Terraform target surface exists
