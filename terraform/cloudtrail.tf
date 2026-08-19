@@ -2,7 +2,8 @@
 # This file adds only the notification path Sentinel polls.
 
 resource "aws_sqs_queue" "sentinel" {
-  name = local.queue_name
+  name                    = local.queue_name
+  sqs_managed_sse_enabled = true
 
   # Four days of retention, so an outage on the Sentinel side does not lose objects.
   message_retention_seconds = 345600
