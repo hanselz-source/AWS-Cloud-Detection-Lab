@@ -20,7 +20,7 @@ GitHub Actions CI runs the following checks:
 - KQL and SPL conversion
 - Comparison against the expected query files
 - Fixture evaluation for each generated query
-- Checkov and Trivy scans of committed Terraform
+- Checkov and Trivy scans of committed Terraform, with successful results uploaded to GitHub Code Scanning as SARIF
 
 ## Workflow
 
