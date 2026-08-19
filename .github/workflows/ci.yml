@@ -125,16 +125,34 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      security-events: write
     steps:
       - name: initialization
         uses: actions/checkout@v4
       - name: Checkov Terraform scan
-        run: >-
-          docker run --rm --volume "$GITHUB_WORKSPACE:/repo:ro"
-          bridgecrew/checkov@sha256:0f169d3d9a5c6666da223253ce4d9f8c3f184e6542ce8328523d03343788a578
-          --directory /repo/terraform --framework terraform --output cli --quiet
+        run: |
+          docker run --rm \
+            --volume "$GITHUB_WORKSPACE:/repo:ro" \
+            --volume "$RUNNER_TEMP:/results" \
+            --workdir /repo \
+            bridgecrew/checkov@sha256:0f169d3d9a5c6666da223253ce4d9f8c3f184e6542ce8328523d03343788a578 \
+            --directory terraform --framework terraform \
+            --output cli --output sarif \
+            --output-file-path console,/results/checkov.sarif --quiet
       - name: Trivy Terraform scan
-        run: >-
-          docker run --rm --volume "$GITHUB_WORKSPACE:/repo:ro"
-          aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969
-          config --exit-code 1 --severity HIGH,CRITICAL /repo/terraform
+        run: |
+          docker run --rm \
+            --volume "$GITHUB_WORKSPACE:/repo:ro" \
+            --volume "$RUNNER_TEMP:/results" \
+            --workdir /repo \
+            aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969 \
+            config --exit-code 1 --severity HIGH,CRITICAL \
+            --format sarif --output /results/trivy.sarif terraform
+      - name: upload Checkov SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ runner.temp }}/checkov.sarif
+      - name: upload Trivy SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ runner.temp }}/trivy.sarif
